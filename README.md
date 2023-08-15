@@ -1,13 +1,13 @@
-# Image Processing with CellProfiler and Slurm
+# CellProfiler Slurm Batch Processor
 
-This Python script facilitates batch image processing using CellProfiler and Slurm, a job scheduling system. It enables the efficient processing of a large number of images by distributing the workload across multiple batches, leveraging the power of a computing cluster.
+This project provides a Python script for running CellProfiler in batches using Slurm on a High-Performance Computing (HPC) cluster. It allows you to process a directory of images using a CellProfiler pipeline and distribute the processing across multiple Slurm jobs.
 
 ## Features
 
-- Process batches of images using CellProfiler with Slurm job scheduling.
-- Automatically generate batch names based on batch numbers.
-- Verbose mode for detailed output and monitoring.
-- Configurable batch size and memory requirements.
+- Processes batches of images using CellProfiler in parallel on an HPC cluster.
+- Submits Slurm batch jobs with appropriate settings for memory, time, and output.
+- Organizes the output and log files in separate directories for each batch.
+- Supports specifying batch size, memory requirement, output directory, and more.
 
 ## Prerequisites
 
