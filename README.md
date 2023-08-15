@@ -62,20 +62,6 @@ python process_images.py example_pipeline.cppipe output images --batch-size 64 -
 python merge_output.py output/* merged/
 ```
 
-## Contributing
-
-Contributions are welcome! If you have any improvements, bug fixes, or new features to add, please follow these steps:
-
-1. Fork this repository.
-2. Create a new branch: `git checkout -b feature-name`.
-3. Make your changes and commit them: `git commit -m 'Add some feature'`.
-4. Push to the branch: `git push origin feature-name`.
-5. Create a pull request.
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-**Note:** This README provides a general overview of the project. Please refer to the source code and inline comments for more detailed information.
