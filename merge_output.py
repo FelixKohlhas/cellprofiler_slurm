@@ -10,7 +10,7 @@ def merge_csv_files(dir_paths, output_dir, verbose=False):
     merged_dataframes = {}
 
     # Loop through each directory
-    for dir_path in dir_paths:
+    for dir_path in sorted(dir_paths):
         if verbose:
             print(f"Processing directory: {dir_path}")
 
