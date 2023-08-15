@@ -76,6 +76,9 @@ def main():
     # Create the parent output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)
 
+    # Create the log directory if it doesn't exist
+    os.makedirs(log_dir, exist_ok=True)
+
     image_list = os.listdir(image_dir)
     total_images = len(image_list) // args.num_channels + 1
 
