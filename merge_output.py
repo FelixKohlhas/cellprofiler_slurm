@@ -20,7 +20,7 @@ def merge_csv_files(dir_paths, output_dir, verbose=False):
         # Loop through each CSV file in the directory
         for file in files:
             # Check if the file is a CSV file
-            if file.lower().endswith('.csv'):
+            if file.lower().endswith('.csv') and file != "Experiment.csv":
                 file_path = os.path.join(dir_path, file)
                 if verbose:
                     print(f"Reading file: {file_path}")
