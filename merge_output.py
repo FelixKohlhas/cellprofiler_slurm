@@ -18,7 +18,7 @@ def merge_csv_files(dir_paths, output_dir, verbose=False):
         files = os.listdir(dir_path)
 
         # Loop through each CSV file in the directory
-        for file in sorted(files):
+        for file in files:
             # Check if the file is a CSV file
             if file.lower().endswith('.csv') and file != "Experiment.csv":
                 file_path = os.path.join(dir_path, file)
@@ -43,7 +43,6 @@ def merge_csv_files(dir_paths, output_dir, verbose=False):
         if verbose:
             print(f"Saving merged dataframe to: {output_path}")
         df.to_csv(output_path, index=False)
-        del df
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Merge CSV files with the same name from different directories.")
