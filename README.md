@@ -1,5 +1,3 @@
-<img src="https://github.com/FelixKohlhas/cellprofiler_slurm/assets/18424307/f8fa79da-f6c2-4210-ac22-d589eee5b316" width="25%">
-
 # CellProfiler Slurm Batch Processor
 
 This project provides a Python script for running CellProfiler in batches using Slurm on a High-Performance Computing (HPC) cluster. It allows you to process a directory of images using a CellProfiler pipeline and distribute the processing across multiple Slurm jobs.
@@ -14,7 +12,7 @@ This project provides a Python script for running CellProfiler in batches using 
 ## Prerequisites
 
 - [CellProfiler](https://cellprofiler.org) installed on your system.
-- A working [Slurm](https://slurm.schedmd.com/) job scheduling system.
+- A working Slurm job scheduling system.
 - Python 3.x.
 
 ## Installation
