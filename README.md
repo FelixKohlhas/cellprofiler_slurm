@@ -59,7 +59,7 @@ python process_images.py example_pipeline.cppipe output images --batch-size 64 -
 
 #### Merge output
 ```sh
-python merge_output.py output/* merged/
+python merge_output.py output merged
 ```
 
 ## License
