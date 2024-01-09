@@ -36,7 +36,7 @@ def submit_slurm_job(batch_name, batch_start, batch_end, pipeline_file, output_d
         f"--time=24:00:00",
         f"--mem={memory}",
         "--wrap",
-        f"cellprofiler -c -r -p {pipeline_file} -f {batch_start} -l {batch_end - 1} -o {batch_output_dir} -i {image_dir}",
+        f'cellprofiler -c -r -p "{pipeline_file}" -f "{batch_start}" -l "{batch_end - 1}" -o "{batch_output_dir}" -i "{image_dir}"',
     ]
 
     if verbose:
