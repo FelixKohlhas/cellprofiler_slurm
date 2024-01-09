@@ -36,7 +36,7 @@ def submit_slurm_job(batch_name, batch_start, batch_end, pipeline_file, output_d
         f"--time=24:00:00",
         f"--mem={memory}",
         "--wrap",
-        f'cellprofiler -c -r -p "{pipeline_file}" -f "{batch_start}" -l "{batch_end - 1}" -o "{batch_output_dir}" -i "{image_dir}"',
+        f'cellprofiler -c -r -p "{pipeline_file}" -f "{batch_start}" -l "{batch_end}" -o "{batch_output_dir}" -i "{image_dir}"',
     ]
 
     if verbose:
@@ -52,7 +52,7 @@ def main():
     parser.add_argument("output_dir", help="Parent output directory where the analysis results will be saved.")
     parser.add_argument("image_dir", help="Path to the directory containing input images.")
     parser.add_argument("--batch-size", type=int, default=32, help="Number of images to process in each batch.")
-    parser.add_argument("--num-channels", type=int, default=4, help="Number of channels in the images.")
+    parser.add_argument("--num-images", type=int, default=1500, help="Number of images (number of wells * number of fields).")
     parser.add_argument("--memory", default="16G", help="Memory requirement for the Slurm batch job.")
     parser.add_argument("--log-dir", default="slurm_logs", help="Directory for Slurm job log files.")
     parser.add_argument("--verbose", action="store_true", help="Print verbose information.")
@@ -79,14 +79,13 @@ def main():
     # Create the log directory if it doesn't exist
     os.makedirs(log_dir, exist_ok=True)
 
-    image_list = os.listdir(image_dir)
-    total_images = len(image_list) // args.num_channels + 1
+    total_images = args.num_images
 
     print(f"Total images found: {total_images}")
 
     # Process images in batches using Slurm
     for i in range(0, total_images, args.batch_size):
-        batch_start = i
+        batch_start = i + 1 # CellProfiler uses 1-based indexing
         batch_end = min(i + args.batch_size, total_images)
         batch_name = get_batch_name(i // args.batch_size + 1)
 
