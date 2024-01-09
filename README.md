@@ -38,14 +38,14 @@ This project provides a Python script for running CellProfiler in batches using 
 ## Usage
 
 ```sh
-python process_images.py pipeline_file output_dir image_dir [--batch-size BATCH_SIZE] [--num-channels NUM_CHANNELS] [--memory MEMORY] [--log-dir LOG_DIR] [--verbose]
+python process_images.py pipeline_file output_dir image_dir [--batch-size BATCH_SIZE] [--num-images NUM_IMAGES] [--memory MEMORY] [--log-dir LOG_DIR] [--verbose]
 ```
 
 - `pipeline_file`: Path to the CellProfiler pipeline (.cppipe) file.
 - `output_dir`: Parent output directory where analysis results will be saved.
 - `image_dir`: Path to the directory containing input images.
 - `--batch-size`: Number of images to process in each batch (default: 32).
-- `--num-channels`: Number of channels in the images (default: 4).
+- `--num-images`: Number of images (number of wells * number of fields; default: 1500).
 - `--memory`: Memory requirement for the Slurm batch job (default: 16G).
 - `--log-dir`: Directory for Slurm job log files (default: slurm_logs).
 - `--verbose`: Print verbose information.
@@ -54,7 +54,7 @@ python process_images.py pipeline_file output_dir image_dir [--batch-size BATCH_
 
 #### Process images
 ```sh
-python process_images.py example_pipeline.cppipe output images --batch-size 64 --memory 32G --verbose
+python process_images.py example_pipeline.cppipe output images --num-images 1500 --batch-size 64 --memory 32G --verbose
 ```
 
 #### Merge output
